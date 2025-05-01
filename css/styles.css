@@ -1,0 +1,572 @@
+/* css/style.css */
+body.apple-style {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f7;
+  margin: 0;
+  padding: 0;
+  color: #1d1d1f;
+}
+
+.login-container, .form-container, .admin-container {
+  background: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Ajuste para el admin-container si el menú es más ancho */
+.admin-container {
+  max-width: 900px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, select, textarea, button {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+button {
+  background-color: #0071e3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Estilos para el menú del asesor */
+.menu-asesor {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  border-radius: 8px; /* Añadido un poco de redondeo */
+}
+
+.menu-asesor ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem; /* Aumentado el espacio entre elementos */
+  align-items: center; /* Centrado verticalmente */
+}
+
+.menu-asesor ul li a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 0.75rem 1.25rem; /* Aumentado el padding */
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para color también */
+  background-color: transparent; /* Fondo transparente por defecto */
+}
+
+.menu-asesor ul li a:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+/* Estilos para el menú del superusuario */
+.menu-admin {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  border-radius: 8px; /* Añadido un poco de redondeo */
+}
+
+.menu-admin ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem; /* Aumentado el espacio entre elementos */
+  align-items: center; /* Centrado verticalmente */
+}
+
+.menu-admin ul li a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 0.75rem 1.25rem; /* Aumentado el padding */
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición para color también */
+  background-color: transparent; /* Fondo transparente por defecto */
+}
+
+.menu-admin ul li a:hover {
+  background-color: #e9ecef;
+  color: #0056b3;
+}
+
+.menu-admin .dropdown {
+  position: relative;
+}
+
+.menu-admin .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 8px;
+  top: 100%; /* Para que aparezca debajo del elemento padre */
+  left: 0;
+  padding: 0.5rem 0; /* Añadido padding al contenedor del dropdown */
+}
+
+.menu-admin .dropdown-content a {
+  color: black;
+  padding: 0.75rem 1.5rem; /* Ajustado el padding de los items del dropdown */
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-admin .dropdown-content a:hover {
+  background-color: #ddd;
+  color: #212529;
+}
+
+.menu-admin .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilos para la tabla de usuarios en el módulo de administración */
+.user-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden; /* Para que el border-radius funcione en la tabla */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-list th, .user-list td {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-list tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: left;
+}
+
+.action-buttons button, .action-buttons a {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+
+.action-buttons button:hover, .action-buttons a:hover {
+  opacity: 0.8;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.activate-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.deactivate-button {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.status-active {
+  color: green;
+  font-weight: bold;
+}
+
+.status-inactive {
+  color: red;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: green;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para el formulario de reportes en admin/reportes/index.php */
+.report-form {
+  display: grid;
+  grid-template-columns: auto auto auto 1fr; /* Tres columnas de ancho automático para las etiquetas e inputs de fecha y el select de asesor, y el resto del espacio para el botón */
+  gap: 1rem; /* Espacio entre las celdas de la cuadrícula */
+  align-items: center; /* Alineación vertical de los elementos */
+  margin-bottom: 1.5rem;
+}
+
+.report-form label {
+  font-weight: bold;
+}
+
+.report-form input[type="date"],
+.report-form select {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%; /* O ajusta según necesites */
+}
+
+.report-form button[type="submit"] {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.report-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Ajuste para que el botón ocupe una fila completa si es necesario */
+.button-row {
+  grid-column: 1 / -1; /* Ocupa desde la primera hasta la última columna */
+  text-align: center; /* Centrar el botón si ocupa toda la fila */
+}
+
+/* Estilos para el icono de descarga en el reporte */
+.download-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono según necesites */
+  color: #007bff; /* Puedes personalizar el color */
+  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+  margin-left: 10px; /* O el espaciado que prefieras */
+}
+
+.download-icon:hover {
+  color: #0056b3; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos para el icono de descarga en el reporte */
+.download-icon {
+  font-size: 24px; /* Ajusta el tamaño del icono según necesites */
+  color: #007bff; /* Puedes personalizar el color */
+  text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+  margin-left: 10px; /* O el espaciado que prefieras */
+}
+
+.download-icon:hover {
+  color: #0056b3; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilos para el formulario del asesor */
+.asesor-form label {
+  display: block; /* Cada etiqueta en una línea separada */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.asesor-form input[type="text"],
+.asesor-form input[type="tel"],
+.asesor-form input[type="date"] {
+  width: 100%; /* O un ancho específico */
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Evita que el padding y el border aumenten el ancho */
+}
+
+.asesor-form .button-row {
+  margin-top: 20px;
+}
+
+.asesor-form .button-row button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.asesor-form .button-row button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+/* Puedes agregar más estilos según sea necesario */
+/* Cargar audio */
+.cargar-audio-btn {
+  background-color: #28a745; /* Color verde */
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.cargar-audio-btn:hover {
+  background-color: #1e7e34; /* Verde más oscuro */
+}
+
+/* Estilos para admin/grabaciones/listar_ventas.php */
+
+.filter-form {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-form label {
+  margin-right: 5px;
+}
+
+.filter-form input[type="date"],
+.filter-form select,
+.filter-form button {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filter-form button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-form button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.action-buttons {
+  text-align: center;
+}
+
+.action-buttons a {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+.action-buttons a:hover {
+  background-color: #0056b3;
+}
+
+.admin-container {
+  background: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 90%;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Puedes añadir aquí más estilos generales si es necesario */
+/* Estilos para cargar_audio.php */
+.upload-container {
+  background: #ffffff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.upload-container h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333; /* Un poco más oscuro para énfasis */
+}
+
+.upload-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.upload-container label {
+  font-weight: bold;
+  color: #555; /* Un poco más suave */
+}
+
+.upload-container input[type="file"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.upload-container input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.upload-container input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.upload-container .error-message {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be 60% or whatever you want */
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
